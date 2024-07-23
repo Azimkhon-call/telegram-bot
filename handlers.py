@@ -226,9 +226,10 @@ async def uzbek(call: CallbackQuery, bot: Bot):
 
 
 ##############################################################################################
-@router.message(F.text == 'exit')
-async def python(message: Message):
-    await message.answer('bosh menu',reply_markup=keyboard)
+@router.callback_query(F.data == 'exit')
+async def python(call.CallbackQuery):
+    await call.message.delete()
+    await message.answer('Qayta qanday yordam bera olaman',reply_markup=keyboard)
 
 
 
